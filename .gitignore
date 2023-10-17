@@ -2,6 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
+LastStopShop/[Ll]ibrary/
+LastStopShop/[Tt]emp/
+LastStopShop/[Oo]bj/
+LastStopShop/[Bb]uild/
+LastStopShop/[Bb]uilds/
+LastStopShop/[Ll]ogs/
+LastStopShop/[Uu]ser[Ss]ettings/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
