@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc958d9fc9a23740b2404e7e26f22ec, type: 3}
+  m_Name: Rogue4Body
+  m_EditorClassIdentifier: 
+  idItem: 6
+  type: 1
+  imageItem: {fileID: 21300000, guid: 01e99edca0253a74f8ed5de0243394b4, type: 3}
+  nameItem: Shadow's armor
+  price: 20
+  spritesEquipment:
+  - {fileID: 21300000, guid: 0d8396fbd3e20f941b37c1cb7829a2e8, type: 3}
+  - {fileID: 21300000, guid: 48ecbe245379f214497aae538fe1d4f3, type: 3}
+  - {fileID: 21300000, guid: 7c0d0c89b736eb54cac31e27a02a92e5, type: 3}
+  - {fileID: 21300000, guid: 661842e23ba86e34abbf52c56c321411, type: 3}
+  - {fileID: 21300000, guid: ece48dca5e286fd48b5dc0633b08b15d, type: 3}
+  - {fileID: 21300000, guid: 893fc4b41b56e07479a71d811eee4b4e, type: 3}
+  - {fileID: 21300000, guid: 3d9056df586b6024fbc5b9fee2433eef, type: 3}
+  - {fileID: 21300000, guid: 7b9383d96cedcd9409cc1f3d6d355cf6, type: 3}
+  - {fileID: 21300000, guid: 40e550cd3b539f14eb98d42b6769b592, type: 3}
+  - {fileID: 21300000, guid: 6ebc4c8acffeeca41934c2f2393a45be, type: 3}
+  - {fileID: 21300000, guid: 7b78357522a34d64bb8775b962b0deb0, type: 3}
+  - {fileID: 21300000, guid: 4807dc8cba98f89409729f6aac2945a7, type: 3}
