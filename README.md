@@ -43,7 +43,9 @@ It would probably be a roguelike game.
 
 ### Playing the Game
 
-You play the game with a combination of mouse (UI interactions) and keyboard (in-game interactions, using the "E" Key).
+You play the game with a combination of mouse (UI interactions) and keyboard (in-game interactions).
+WASD to move
+E to interact
 
 In-game interactions include:
 The sign outside the store
