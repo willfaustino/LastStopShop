@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SellerAction : MonoBehaviour
 {
-    [SerializeField] private CanvasGroup canvasGroupShop;
-
     public void ShowShop() 
     {
-        canvasGroupShop.Show();
+        Shop.Instance.canvasGroupShop.Show();
+        Player.Instance.SetIsShopping(true);
     }
 
     public void HideShop()
     {
-        canvasGroupShop.Hide();
+        Shop.Instance.canvasGroupShop.Hide();
+        Player.Instance.SetIsShopping(false);
     }
 }

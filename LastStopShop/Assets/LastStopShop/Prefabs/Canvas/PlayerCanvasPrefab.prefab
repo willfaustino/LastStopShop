@@ -807,7 +807,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ab362fdf49023f047aa2d3a16217b56f, type: 2}
   m_sharedMaterial: {fileID: 5433228928773099730, guid: ab362fdf49023f047aa2d3a16217b56f, type: 2}
@@ -999,7 +999,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2834029792246315380}
   - component: {fileID: 6709267646883241910}
-  - component: {fileID: 3236613919589570450}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -1044,22 +1043,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &3236613919589570450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2834029792246315381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07be5bc4500a43445b6a53ad0651c1a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliderHealthPoints: {fileID: 2834029791773854580}
-  buttonInventory: {fileID: 5965835065968264487}
-  textCoins: {fileID: 2834029791836153033}
-  canvasGroupInventory: {fileID: 3567489473677988529}
 --- !u!1 &2834029792338850896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,6 +1320,7 @@ GameObject:
   - component: {fileID: 2834029793520160573}
   - component: {fileID: 2834029793520160574}
   - component: {fileID: 2834029793520160575}
+  - component: {fileID: 5264125767632860823}
   m_Layer: 5
   m_Name: PlayerCanvasPrefab
   m_TagString: Untagged
@@ -1427,6 +1411,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5264125767632860823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2834029793520160560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07be5bc4500a43445b6a53ad0651c1a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 2834029793520160560}
+  sliderHealthPoints: {fileID: 2834029791773854580}
+  buttonInventory: {fileID: 5965835065968264487}
+  textCoins: {fileID: 2834029791836153033}
+  canvasGroupInventory: {fileID: 3567489473677988529}
 --- !u!1 &3007738563611316683
 GameObject:
   m_ObjectHideFlags: 0

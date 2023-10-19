@@ -7,6 +7,38 @@ using UnityEngine.UI;
 
 public class PlayerCanvas : MonoBehaviour
 {
+    #region "Instance"
+
+    private static PlayerCanvas _instance;
+
+    public static PlayerCanvas Instance
+    {
+        get { return _instance; }
+        set
+        {
+            if (_instance == null)
+            {
+                _instance = value;
+                DontDestroyOnLoad(_instance.gameObject);
+            }
+        }
+    }
+
+    protected virtual void Awake()
+    {
+        transform.SetParent(null);
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+
+    }
+
+    #endregion
+
     [Header("Canvas Player")]
     [SerializeField] private Slider sliderHealthPoints;
     [SerializeField] private Button buttonInventory;
@@ -15,12 +47,17 @@ public class PlayerCanvas : MonoBehaviour
 
     void Start()
     {
-        buttonInventory.onClick.AddListener(() => canvasGroupInventory.Show());
+        buttonInventory.onClick.AddListener(ChangeInventoryVisibility);
     }
 
     void UpdateCoinsText(string coins)
     {
         textCoins.text = coins;
+    }
+
+    public int GetCoinsText() 
+    {
+        return int.Parse(textCoins.text);
     }
 
     void OnEnable()
@@ -31,5 +68,17 @@ public class PlayerCanvas : MonoBehaviour
     void OnDisable()
     {
         Player.onUpdateCoins -= UpdateCoinsText;
+    }
+
+    void ChangeInventoryVisibility()
+    {
+        if (canvasGroupInventory.alpha == 1f)
+        {
+            canvasGroupInventory.Hide();
+        }
+        else
+        {
+            canvasGroupInventory.Show();
+        }
     }
 }

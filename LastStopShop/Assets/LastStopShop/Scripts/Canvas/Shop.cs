@@ -8,10 +8,42 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
+    #region "Instance"
+
+    private static Shop _instance;
+
+    public static Shop Instance
+    {
+        get { return _instance; }
+        set
+        {
+            if (_instance == null)
+            {
+                _instance = value;
+                DontDestroyOnLoad(_instance.gameObject);
+            }
+        }
+    }
+
+    protected virtual void Awake()
+    {
+        transform.SetParent(null);
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+
+    }
+
+    #endregion
+
     public static Action<ItemSO> onPurchaseItem;
 
     [Header("CanvasShop")]
-    [SerializeField] private CanvasGroup canvasGroupShop;
+    public CanvasGroup canvasGroupShop;
     [SerializeField] private Button buttonCloseShop;
     [SerializeField] private TextMeshProUGUI textPurchaseMessage;
 
@@ -76,6 +108,7 @@ public class Shop : MonoBehaviour
     {
         textPurchaseMessage.text = "";
         canvasGroupShop.Hide();
+        Player.Instance.SetIsShopping(false);
     }
 
     private void OnPurchaseItem(ItemSO item) 

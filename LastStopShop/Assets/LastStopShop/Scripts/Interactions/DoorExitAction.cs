@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorAction : MonoBehaviour
+public class DoorExitAction : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
 
@@ -16,6 +16,6 @@ public class DoorAction : MonoBehaviour
     private IEnumerator WaitForSceneLoad()
     {
         yield return new WaitForSeconds(1.7f);
-        SceneManager.LoadScene("ShopScene");
+        SceneManager.LoadScene("GameScene");
     }
 }

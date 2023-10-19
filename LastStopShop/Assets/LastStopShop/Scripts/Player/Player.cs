@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
 
     public static Action<string> onUpdateCoins;
 
-    private int _coins = 50;
-    private bool _isShopping = true;
+    private int _coins;
+    private bool _isShopping = false;
     private Vector2 _movement;
     private bool _facingRight = true;
 
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        OnUpdateCoins(_coins.ToString());
+        _coins = PlayerCanvas.Instance.GetCoinsText();
     }
 
     private void Update()

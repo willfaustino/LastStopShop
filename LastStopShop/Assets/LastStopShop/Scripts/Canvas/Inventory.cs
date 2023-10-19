@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
-        buttonCloseInventory.onClick.AddListener(ChangeInventoryVisibility);
+        buttonCloseInventory.onClick.AddListener(() => canvasGroupInventory.Hide());
 
         CreateEquipmentsList();
     }
@@ -52,18 +52,21 @@ public class Inventory : MonoBehaviour
 
     public void ChangeEquipedItem(ItemSO item)
     {
-        if (item.type == ItemTypeEnum.Hood)
+        if (item != null)
         {
-            imageHood.sprite = item.imageItem;
-            currentEquipedHood = item;
-        }
-        else
-        {
-            imageBody.sprite = item.imageItem;
-            currentEquipedBody = item;
-        }
+            if (item.type == ItemTypeEnum.Hood)
+            {
+                imageHood.sprite = item.imageItem;
+                currentEquipedHood = item;
+            }
+            else
+            {
+                imageBody.sprite = item.imageItem;
+                currentEquipedBody = item;
+            }
 
-        OnChangeEquipment(item);
+            OnChangeEquipment(item);
+        }
     }
 
     public void SellInventoryItem(ItemSO item)
@@ -88,18 +91,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    void ChangeInventoryVisibility()
-    {
-        if (canvasGroupInventory.alpha == 1f)
-        {
-            canvasGroupInventory.Hide();
-        }
-        else
-        {
-            canvasGroupInventory.Show();
-        }
-    }
-
     private void OnItemSold(ItemSO item, string message)
     {
         if (onItemSold != null)
@@ -121,14 +112,26 @@ public class Inventory : MonoBehaviour
             onChangeEquipment.Invoke(item);
     }
 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != "MainScene")
+        {
+            canvasGroupInventory.Hide();
+            ChangeEquipedItem(currentEquipedHood);
+            ChangeEquipedItem(currentEquipedBody);
+        }
+    }
+
     void OnEnable()
     {
         Shop.onPurchaseItem += CreateItem;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnDisable()
     {
         Shop.onPurchaseItem -= CreateItem;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
 }
