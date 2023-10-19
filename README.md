@@ -10,9 +10,9 @@ To facilitate the organization of the scripts and assets I created, I separated 
 
 Among the created scripts, the most important ones are:
 
-Player (controls movement, currently equipped clothing, and coin count)
-Inventory (controls the player's equipment, changes which items are equipped)
-Shop (buying and selling of products)
+Player (controls movement, currently equipped clothing, and coin count),
+Inventory (controls the player's equipment, changes which items are equipped),
+Shop (buying and selling of products).
 
 ### Thought Process
 
@@ -22,12 +22,12 @@ After that, I broke down what I needed to do to create the game into smaller tas
 
 My "To Do" list looked like this:
 
-Create scenarios
-Create UI
-Shop features
-Equip clothes
-Interactions with the world and sounds
-Transitions between scenes
+Create scenarios,
+Create UI,
+Shop features,
+Equip clothes,
+Interactions with the world and sounds,
+Transitions between scenes.
 
 I tested each feature as I developed them and did a general test at the end after creating the build.
 
@@ -35,10 +35,10 @@ I tested each feature as I developed them and did a general test at the end afte
 
 I am quite satisfied with the final result. I managed to do everything within the deadline and with good code. However, there is always room for improvement. If I were to continue working on this project, I would add:
 
-A combat system
-A player progression system
-A story and interactions with the mysterious vendor
-More animations in the scenes
+A combat system,
+A player progression system,
+A story and interactions with the mysterious vendor,
+More animations in the scenes,
 It would probably be a roguelike game.
 
 ### Playing the Game
@@ -46,9 +46,9 @@ It would probably be a roguelike game.
 You play the game with a combination of mouse (UI interactions) and keyboard (in-game interactions). WASD to move and E to interact.
 
 In-game interactions include:
-The sign outside the store
-The entrance and exit doors
-The vendor
+The sign outside the store,
+The entrance and exit doors,
+The vendor,
 The coin purse on the table to the left of the room. Adds 10 coins to the total.
 
 Thank you for your time! 
