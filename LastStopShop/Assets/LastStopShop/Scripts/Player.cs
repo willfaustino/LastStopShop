@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
 
-    private int _coins = 100;
-    private int _currentItemId;
+    public static Action<string> onUpdateCoins;
 
-    public TextMeshProUGUI textCoins;
+    private int _coins = 50;
+    private bool _isShopping = true;
 
     [Header("PlayerSpriteRenderer")]
     [SerializeField] private SpriteRenderer spriteRendererHood;
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        textCoins.text = _coins.ToString();
+        OnUpdateCoins(_coins.ToString());
     }
 
     public int GetCoins() 
@@ -47,22 +48,27 @@ public class Player : MonoBehaviour
     public void AddCoins(int coins)
     {
         _coins += coins;
-        textCoins.text = _coins.ToString();
+        OnUpdateCoins(_coins.ToString());
     }
 
     public void RemoveCoins(int coins) 
     {
         _coins -= coins;
-        textCoins.text = _coins.ToString();
+        OnUpdateCoins(_coins.ToString());
+    }
+
+    public bool GetIsShopping()
+    {
+        return _isShopping;
+    }
+
+    public void SetIsShopping(bool isShopping)
+    {
+        _isShopping = isShopping;
     }
 
     public void ChangeEquipedItem(ItemSO item)
     {
-        if (item.idItem == _currentItemId)
-            return;
-
-        _currentItemId = item.idItem;
-
         if(item.type == ItemTypeEnum.Hood) 
         {
             spriteRendererHood.sprite = item.spritesEquipment.FirstOrDefault();
@@ -82,5 +88,21 @@ public class Player : MonoBehaviour
             spriteRendererLegRight.sprite = item.spritesEquipment[10];
             spriteRendererPelvis.sprite = item.spritesEquipment[11];
         }
+    }
+
+    private void OnUpdateCoins(string coins)
+    {
+        if (onUpdateCoins != null)
+            onUpdateCoins.Invoke(coins);
+    }
+
+    void OnEnable()
+    {
+        Inventory.onChangeEquipment += ChangeEquipedItem;
+    }
+
+    void OnDisable()
+    {
+        Inventory.onChangeEquipment -= ChangeEquipedItem;
     }
 }

@@ -24,7 +24,7 @@ public class Shop : MonoBehaviour
 
     void Start()
     {
-        buttonCloseShop.onClick.AddListener(() => canvasGroupShop.Hide());
+        buttonCloseShop.onClick.AddListener(CloseShop);
         CreateProductsList();
     }
 
@@ -36,12 +36,14 @@ public class Shop : MonoBehaviour
         }
     }
 
-    private void CreateProduct(ItemSO item)
+    private void CreateProduct(ItemSO item, string message = "")
     {
         ProductPrefab button;
         button = Instantiate(productPrefab, transform);
         button.transform.SetParent(contentProducts.transform);
         button.SetUI(item, () => BuyItem(item));
+
+        textPurchaseMessage.text = message;
     }
 
     private void BuyItem(ItemSO item)
@@ -49,27 +51,31 @@ public class Shop : MonoBehaviour
         if(Player.Instance.GetCoins() >= item.price)
         {
             Player.Instance.RemoveCoins(item.price);
-            // atualizar qtd moedas no text no canvasplayes
+            ChangeProductAvailable(item.idItem);
+            OnPurchaseItem(item);
             textPurchaseMessage.text = "Item purchased successfully!";
         }
         else
         {
             textPurchaseMessage.text = "Not enough coins!";
         }
-
-        ChangeProductAvailable(item.idItem);
-        OnPurchaseItem(item);
     }
 
     private void ChangeProductAvailable(int idProduct)
     {
-        foreach (ProductPrefab product in contentProducts.GetComponentsInChildren<ProductPrefab>(true))
+        foreach (ProductPrefab product in contentProducts.GetComponentsInChildren<ProductPrefab>())
         {
             if (product.GetProductId() == idProduct)
             {
                 Destroy(product.gameObject);
             }
         }
+    }
+
+    void CloseShop() 
+    {
+        textPurchaseMessage.text = "";
+        canvasGroupShop.Hide();
     }
 
     private void OnPurchaseItem(ItemSO item) 

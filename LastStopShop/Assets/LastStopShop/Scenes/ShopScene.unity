@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1317902777710439203, guid: 046b089543d5d3d418d3b4f277128cf0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2834029792769538145, guid: 046b089543d5d3d418d3b4f277128cf0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2730,7 +2734,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5286,10 +5290,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 12
+    m_Right: 12
+    m_Top: 12
+    m_Bottom: 12
   m_ChildAlignment: 0
   m_Spacing: 12
   m_ChildForceExpandWidth: 1
@@ -5313,17 +5317,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &1546619151 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2834029791836153033, guid: 046b089543d5d3d418d3b4f277128cf0, type: 3}
-  m_PrefabInstance: {fileID: 104850246}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1563824103
 GameObject:
   m_ObjectHideFlags: 0
@@ -5401,13 +5394,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563824103}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.47058827, g: 0.2509804, b: 0.22352943, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7830,9 +7823,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9078392148780629673, guid: 3c60706d923b46b42b2c943a9fe222fd, type: 3}
-      propertyPath: textCoins
-      value: 
-      objectReference: {fileID: 1546619151}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c60706d923b46b42b2c943a9fe222fd, type: 3}

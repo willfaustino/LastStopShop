@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,8 @@ using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
-    public static Action<ItemSO> onItemSold;
+    public static Action<ItemSO, string> onItemSold;
+    public static Action<ItemSO> onChangeEquipment;
 
     [Header("CanvasInventory")]
     [SerializeField] private CanvasGroup canvasGroupInventory;
@@ -22,14 +24,13 @@ public class Inventory : MonoBehaviour
 
     [Header("Scriptable Objects")]
     [SerializeField] private List<ItemSO> startingItems;
-
-    private List<ItemSO> currentEquipments;
+    [SerializeField] private ItemSO currentEquipedHood;
+    [SerializeField] private ItemSO currentEquipedBody;
 
     void Start()
     {
         buttonCloseInventory.onClick.AddListener(ChangeInventoryVisibility);
-        //currentEquipments = new List<ItemSO>();
-        //currentEquipments = startingItems;
+
         CreateEquipmentsList();
     }
 
@@ -51,19 +52,34 @@ public class Inventory : MonoBehaviour
 
     public void ChangeEquipedItem(ItemSO item)
     {
-        print("change item");
+        if (item.type == ItemTypeEnum.Hood)
+        {
+            imageHood.sprite = item.imageItem;
+            currentEquipedHood = item;
+        }
+        else
+        {
+            imageBody.sprite = item.imageItem;
+            currentEquipedBody = item;
+        }
+
+        OnChangeEquipment(item);
     }
 
     public void SellInventoryItem(ItemSO item)
     {
-        ChangeItemAvailable(item.idItem);
-        OnItemSold(item);
-        Player.Instance.AddCoins(item.price);
+        if (Player.Instance.GetIsShopping())
+        {
+            ChangeItemAvailable(item.idItem);
+
+            OnItemSold(item, "Item sold!");
+            Player.Instance.AddCoins(item.price);
+        }
     }
 
     private void ChangeItemAvailable(int idItem)
     {
-        foreach (ButtonEquipmentPrefab item in contentEquipments.GetComponentsInChildren<ButtonEquipmentPrefab>(true))
+        foreach (ButtonEquipmentPrefab item in contentEquipments.GetComponentsInChildren<ButtonEquipmentPrefab>())
         {
             if (item.GetItemId() == idItem)
             {
@@ -84,10 +100,25 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void OnItemSold(ItemSO item)
+    private void OnItemSold(ItemSO item, string message)
     {
         if (onItemSold != null)
-            onItemSold.Invoke(item);
+            onItemSold.Invoke(item, message);
+
+        if (currentEquipedHood == item)
+        {
+            ChangeEquipedItem(startingItems.FirstOrDefault());
+        }
+        else if (currentEquipedBody == item)
+        {
+            ChangeEquipedItem(startingItems[1]);
+        }
+    }
+
+    private void OnChangeEquipment(ItemSO item)
+    {
+        if (onChangeEquipment != null)
+            onChangeEquipment.Invoke(item);
     }
 
     void OnEnable()
