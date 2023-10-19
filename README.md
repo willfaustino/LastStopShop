@@ -1,6 +1,6 @@
 # Last Stop Shop
 
-A mysterious store that lies at the end of the universe, nobody knows how to get there. But some unlucky souls end up there intentionally. Upon arriving at the store, you are greeted by a mysterious vendor, with even more mysterious products.
+A mysterious store that lies at the end of the universe, nobody knows how to get there, but some unlucky souls end up there intentionally. Upon arriving at the store, you are greeted by a mysterious vendor, with even more mysterious products.
 
 This is the premise of the game I made for this challenge, and I had a lot of fun doing it!
 
