@@ -10,4 +10,5 @@ public class ItemSO : ScriptableObject
     public string nameItem;
     public int price;
     public List<Sprite> spritesEquipment;
+    public bool canBeSold = true;
 }

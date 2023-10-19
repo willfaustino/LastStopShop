@@ -30,3 +30,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ed569bcf23ebe674180d6ae7a5d29495, type: 3}
   - {fileID: 21300000, guid: 7b78357522a34d64bb8775b962b0deb0, type: 3}
   - {fileID: 21300000, guid: c376d5b80d02ffe4ba89fd03d60ec471, type: 3}
+  canBeSold: 0

@@ -87,6 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7940212046297279110}
   - component: {fileID: 3567489473677988529}
+  - component: {fileID: 8361844702072582607}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -127,6 +128,27 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &8361844702072582607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415011603636435774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b73f05b054780e49919e3f53f4fba90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroupInventory: {fileID: 3567489473677988529}
+  buttonCloseInventory: {fileID: 7990111833758961128}
+  imageHood: {fileID: 4204753339923036841}
+  imageBody: {fileID: 3574600739320405181}
+  contentEquipments: {fileID: 4695037946318893772}
+  buttonEquipmentPrefab: {fileID: 8978757868590984657, guid: 8f9b839a7fae2ad4f903eef19c3156e6, type: 3}
+  startingItems:
+  - {fileID: 11400000, guid: e51e886b3624ba641aae55fb1aac098a, type: 2}
+  - {fileID: 11400000, guid: 5171badf44acd4d4ba9be53c0bdc4fb3, type: 2}
 --- !u!1 &472693549571278859
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,7 +658,7 @@ GameObject:
   - component: {fileID: 2834029791773854581}
   - component: {fileID: 2834029791773854580}
   m_Layer: 5
-  m_Name: SliderHeathPoints
+  m_Name: SliderHealthPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -975,6 +997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2834029792246315380}
   - component: {fileID: 6709267646883241910}
+  - component: {fileID: 3236613919589570450}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -1019,6 +1042,22 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &3236613919589570450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2834029792246315381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07be5bc4500a43445b6a53ad0651c1a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderHealthPoints: {fileID: 2834029791773854580}
+  buttonInventory: {fileID: 5965835065968264487}
+  textCoins: {fileID: 2834029791836153033}
+  canvasGroupInventory: {fileID: 3567489473677988529}
 --- !u!1 &2834029792338850896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1336,7 @@ GameObject:
   - component: {fileID: 2834029793520160574}
   - component: {fileID: 2834029793520160575}
   m_Layer: 5
-  m_Name: PlayerCanvas
+  m_Name: PlayerCanvasPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1489,7 +1528,7 @@ GameObject:
   - component: {fileID: 1717322527080632874}
   - component: {fileID: 4204753339923036841}
   m_Layer: 5
-  m_Name: ImageEquipment
+  m_Name: ImageHood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1543,7 +1582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e2e810bfea3195b4c82dfa47e46df579, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1859,7 +1898,7 @@ GameObject:
   - component: {fileID: 9154446354685508477}
   - component: {fileID: 3574600739320405181}
   m_Layer: 5
-  m_Name: ImageEquipment
+  m_Name: ImageBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1913,7 +1952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f6804fd62a240824888fa643e0d4ef4d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
