@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -42,12 +39,15 @@ public class PlayerCanvas : MonoBehaviour
     [Header("Canvas Player")]
     [SerializeField] private Slider sliderHealthPoints;
     [SerializeField] private Button buttonInventory;
+    [SerializeField] private Button buttonConfiguration;
     [SerializeField] private TextMeshProUGUI textCoins;
     [SerializeField] private CanvasGroup canvasGroupInventory;
+    [SerializeField] private CanvasGroup canvasGroupConfiguration;
 
     void Start()
     {
         buttonInventory.onClick.AddListener(ChangeInventoryVisibility);
+        buttonConfiguration.onClick.AddListener(ChangeConfigurationVisibility);
     }
 
     void UpdateCoinsText(string coins)
@@ -79,6 +79,18 @@ public class PlayerCanvas : MonoBehaviour
         else
         {
             canvasGroupInventory.Show();
+        }
+    }
+
+    void ChangeConfigurationVisibility()
+    {
+        if (canvasGroupConfiguration.alpha == 1f)
+        {
+            canvasGroupConfiguration.Hide();
+        }
+        else
+        {
+            canvasGroupConfiguration.Show();
         }
     }
 }
