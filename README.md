@@ -2,7 +2,15 @@
 
 A mysterious store that lies at the end of the universe, nobody knows how to get there, but some unlucky souls end up there intentionally. Upon arriving at the store, you are greeted by a mysterious vendor, with even more mysterious products.
 
-This is the premise of the game I made for this challenge, and I had a lot of fun doing it!
+### Playing the Game
+
+You play the game with a combination of mouse (UI interactions) and keyboard (in-game interactions). WASD to move and E to interact.
+
+In-game interactions include:
+The sign outside the store,
+The entrance and exit doors,
+The vendor,
+The coin purse on the table to the left of the room. Adds 10 coins to the total.
 
 ### The Code
 
@@ -16,7 +24,7 @@ Shop (buying and selling of products).
 
 ### Thought Process
 
-After reading the challenge, I started searching for inspiration for what theme my game would have. After looking through images and texts, I decided to make the game about a store at the end of the universe.
+I started searching for inspiration for what theme my game would have. After looking through images and texts, I decided to make the game about a store at the end of the universe.
 
 After that, I broke down what I needed to do to create the game into smaller tasks.
 
@@ -33,26 +41,11 @@ I tested each feature as I developed them and did a general test at the end afte
 
 ### My Performance
 
-I am quite satisfied with the final result. I managed to do everything within the deadline and with good code. However, there is always room for improvement. If I were to continue working on this project, I would add:
+I am quite satisfied with the final result. I managed to do everything within the deadline of 24 hours. However, there is always room for improvement. If I were to continue working on this project, I would add:
 
 A combat system,
 A player progression system,
 A story and interactions with the mysterious vendor,
 More animations in the scenes,
 It would probably be a roguelike game.
-
-### Playing the Game
-
-You play the game with a combination of mouse (UI interactions) and keyboard (in-game interactions). WASD to move and E to interact.
-
-In-game interactions include:
-The sign outside the store,
-The entrance and exit doors,
-The vendor,
-The coin purse on the table to the left of the room. Adds 10 coins to the total.
-
-Thank you for your time! 
-I am looking forward to your feedback!
-
-William.
 
